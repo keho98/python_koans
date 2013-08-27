@@ -37,15 +37,40 @@ class AboutAsserts(Koan):
         """
         Some ways of asserting equality are better than others.
         """
-        expected_value = 2
+
+        expected_value = 2 
         actual_value = 1 + 1
 
         self.assertEqual(expected_value, actual_value)
 
     def test_that_unittest_asserts_work_the_same_way_as_python_asserts(self):
         """
-        Knowing how things really work is half the battle
+        Understand what lies within.
         """
 
         # This throws an AssertionError exception
-        assert True 
+        assert True
+
+    def test_that_sometimes_we_need_to_know_the_class_type(self):
+        """
+        What is in a class name?
+        """
+
+        # Sometimes we will ask you what the class type of an object is.
+        #
+        # For example, contemplate the text string "naval". What is it's class type?
+        # The koans runner will include this feedback for this koan:
+        #
+        #   AssertionError: '-=> FILL ME IN! <=-' != <type 'str'>
+        #
+        # So "naval".__class__ is equal to <type 'str'>? No not quite. This
+        # is just what it displays. The answer is simply str.
+        #
+        # See for yourself:
+
+        self.assertEqual(str, "naval".__class__) # It's str, not <type 'str'>
+
+        # Need an illustration? More reading can be found here:
+        #
+        #   http://bit.ly/__class__
+

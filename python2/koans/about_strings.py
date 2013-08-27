@@ -44,6 +44,7 @@ class AboutStrings(Koan):
 It was the worst of times."
         self.assertEqual(52, len(string))
 
+
     def test_triple_quoted_strings_can_span_lines(self):
         string = """
 Howdy,
@@ -51,14 +52,15 @@ world!
 """
         self.assertEqual(15, len(string))
 
+
     def test_triple_quoted_strings_need_less_escaping(self):
         a = "Hello \"world\"."
         b = """Hello "world"."""
         self.assertEqual(True, (a == b))
 
-    def but_quotes_at_the_end_of_a_triple_quoted_string_are_still_tricky(self):
+    def test_escaping_quotes_at_the_end_of_triple_quoted_string(self):
         string = """Hello "world\""""
-        self.assertEqual(True, string == string)
+        self.assertEqual('Hello "world"', string)
 
     def test_plus_concatenates_strings(self):
         string = "Hello, " + "world"
@@ -162,3 +164,4 @@ world!
         self.assertEqual('timbot', 'TimBot'.lower())
         self.assertEqual('Guido Van Rossum', 'guido van rossum'.title())
         self.assertEqual('tOtAlLy AwEsOmE', 'ToTaLlY aWeSoMe'.swapcase())
+
