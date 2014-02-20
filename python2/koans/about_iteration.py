@@ -75,10 +75,10 @@ class AboutIteration(Koan):
 
     def test_reduce_will_blow_your_mind(self):
         result = reduce(self.add, [2, 3, 4])
-        self.assertEqual(__, result)
+        self.assertEqual(9, result)
 
         result2 = reduce(self.multiply, [2, 3, 4], 1)
-        self.assertEqual(__, result2)
+        self.assertEqual(24, result2)
 
         # Extra Credit:
         # Describe in your own words what reduce does.
@@ -91,14 +91,14 @@ class AboutIteration(Koan):
 
         comprehension = [delicacy.capitalize() for delicacy in feast]
 
-        self.assertEqual(__, comprehension[0])
-        self.assertEqual(__, comprehension[2])
+        self.assertEqual('Lambs', comprehension[0])
+        self.assertEqual('Orangutans', comprehension[2])
 
     def test_use_pass_for_iterations_with_no_body(self):
         for num in range(1, 5):
             pass
 
-        self.assertEqual(__, num)
+        self.assertEqual(4, num)
 
     # ------------------------------------------------------------------
 
